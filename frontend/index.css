@@ -18,3 +18,15 @@ h1 {
 #p2{
     color: pink;
 }
+#nav{
+    text-align: center;
+    background-color: rgb(79, 156, 192);
+    height: 25px;
+    padding-top: 5px;
+}
+#nav a{
+    margin :0px 5px;
+    /*margin x axis and y axis */
+    text-decoration: none;
+    color: white;
+}
