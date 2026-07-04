@@ -44,6 +44,8 @@ function toggle(){
       document.getElementById("card-name").innerText=name
       // img
       document.getElementById("img").src=imageUrl
+      
+
 
     })
 }
