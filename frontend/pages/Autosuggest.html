@@ -3,68 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .left-bar{
-            position: fixed;
-            top: 20px;
-            left: 20px;
-
-        }
-        .right-bar{
-            position: fixed;
-            top:20px;
-            right:20px;
-        }
-        .search-section{
-            text-align: center;
-            margin-top: 100px;
-        }
-        .J{
-            color: chocolate;
-        }
-        .Ja{
-            color: aqua;
-        }
-        .tag-line{
-            color: gray;
-        }
-        .lens{
-            position: relative;
-            left: 40px;
-
-        }
-        .search-box{
-            padding: 15px 15px 15px 45px;
-            border-radius: 30px;
-            width: 40%;
-        }
-        #suggestion-box{
-            border: 1px solid black;
-            width: 45%;
-            margin-left: 28% ;
-
-
-        }
-    </style>
+    <title>AutoSuggest</title>
+     <link rel="stylesheet" href="autosuggest.css">
 </head>
 <body>
-    <div>
-        <span class="left-bar"> &#9881;</span>
-        <span class="right-bar">&#x2022; Online | &#x1F552; -ms</p> 
+    <div id="com">
+    <div id="top_ele1">
+        <span id="gr">&#9881</span>
+        </div>
+        <div id="top_ele2">
+    <span id="smb">&#x2022 Online | &#x1F552 -ms</span>
     </div>
-    <div class="search-section">
-        <h1><span class ="J">wel</span><span class="Ja" >com</span></h1>
-    <p class="tag-line" > One million phrases.Four Algorithms.Prefix based Auto Suggest.</p>
-   <span> <span class="lens">&#128269;</span>
-       <input class="search-box" placeholder="Type Here to search">
-     </span>
-     <div id="suggestion-box">
-        Suggestion Box
+    <div id="info">
+    <h1 id="hidng"><span id="bg">Being</span>Infinity<br></h1>
+    <p id="p1">One million phrases.Four Algorithms.Prefix Based Auto Suggest.</p>
+     <div class="search-container">
+    <span class="search-icon">&#128269;</span>
+    <input type="text" id="search" placeholder="Type Here to search">
+</div>
 
-
-     </div>
-        <div id="suggestions"></div>
+    <div id="suggestion">
+        <!-- Suggestion Box -->
     </div>
+</div>
+</div>
+<script>
+    var searchBox =document.getElementById("search");
+    var suggestionBox =document.getElementById("suggestion");
+    searchBox.addEventListener("input",function()
+    {
+       //get usertype text
+       //make api call to get suggestion
+       //display data in html
+       var userInput=searchBox.value;
+
+       if(userInput.trim()==="")
+       {
+       
+       }
+       else
+       {
+        var url1= "https://autosuggest-backend.onrender.com/api/autosuggest?q="
+        var url3="&algorithm=brute&limit=10&weighted=false";
+        var url=url1+userInput+url3;
+        fetch(url).
+          then(function(response)
+          {
+             return response.json();
+          })
+          .then(function(data)
+          {
+            console.log(data);
+            var resultsArray=data.results;
+            var htmlResults="";
+            for(var i=0;i<resultsArray.length;i++)
+            {
+                htmlResults+="<div id=suggestion_item>" + resultsArray[i].text + "</div>"
+            }
+            suggestionBox.innerHTML=htmlResults;
+          })
+       }
+    })
+</script>
 </body>
 </html>
