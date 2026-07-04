@@ -1,32 +1,62 @@
 h1 {
-    color: red;
+    color:red;
 }
 #home-intro{
-    text-align: center;
+   text-align: center;
 
-   /* border: 3px;
-    border: black;
-    border-style: solid */
+    /* border:3px;
+   border:black;
+   border:3px;
+   border-style:solid */
 
-    border: 3px solid black ; 
-
+   border: 3px black solid;
+   
 }
 #home-intro:hover{
-    background-color: blue;
-    color: white;
-}   
-#p2{
-    color: pink;
+      background-color: rgb(216, 221, 223);
+      color:rgb(159, 77, 95);
 }
-#nav{
+#p2{
+    color:rgb(11, 224, 121);
+}
+#nav {
     text-align: center;
-    background-color: rgb(79, 156, 192);
-    height: 25px;
-    padding-top: 5px;
+    background-color: rgb(227, 78, 103);
+    height:25px;
+    padding-top:5px;
+    margin-bottom:5px;
 }
 #nav a{
-    margin :0px 5px;
-    /*margin x axis and y axis */
-    text-decoration: none;
-    color: white;
+margin: 0px 5px;
+/* margin x axis and y axis */
+text-decoration: none;
+color:white;
+}
+#card{
+    align-items: center;
+    margin-top: 5px;
+    border:3px solid black;
+    width:300px;
+    height:580px;
+    margin:3px auto;
+    border-radius:10px;
+}
+#card-img{
+    width: 300px;
+    height: 300px;
+    align-items: center;
+    margin: 0px auto;
+}
+#img{
+    width: 300px;
+    height: 300px;
+    border-radius: 8px;
+}
+#action{
+    text-align:center;
+    
+}
+
+button{
+    width:100%;
 }
